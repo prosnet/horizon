@@ -60,6 +60,19 @@
                     Failed
                 </a>
             </router-link>
+
+            <div class="nav-item">
+                <a href="#" class="nav-link" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                    <i>
+                        <svg>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="#zondicon-close-solid"></use>
+                        </svg>
+                    </i>
+                    Logout
+                </a>
+            </div>
         </ul>
     </aside>
 </template>
