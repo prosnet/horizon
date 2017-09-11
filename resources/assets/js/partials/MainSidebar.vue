@@ -61,6 +61,20 @@
                 </a>
             </router-link>
 
+            <router-link tag="li" to="/settings" active-class="nav-item-active" class="nav-item">
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i>
+                            <svg>
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#zondicon-wrench"></use>
+                            </svg>
+                        </i>
+                        Settings
+                    </a>
+                </div>
+            </router-link>
+
             <div class="nav-item">
                 <a href="#" class="nav-link" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">

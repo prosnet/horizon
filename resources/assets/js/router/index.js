@@ -76,5 +76,23 @@ export default new Router({
             component: require('../pages/Failed/Job.vue'),
             props: true,
         },
+        {
+            path: '/settings',
+            component: require('../pages/Settings/Index.vue'),
+            children: [
+                {
+                    path: '/',
+                    redirect: 'fetch',
+                },
+                {
+                    path: 'fetch',
+                    component: require('../pages/Settings/Fetch.vue')
+                },
+                {
+                    path: 'send',
+                    component: require('../pages/Settings/Send.vue')
+                },
+            ],
+        },
     ],
 })
