@@ -31,10 +31,9 @@
 //              this.settings.interval = val * 60;
 //          },
 
-//          delayInHours(val) {
-//              val = min(23, val);
-//              this.settings.interval = val;
-//          }
+          delayInHours(val) {
+              this.settings.delay = val;
+          }
         },
 
         methods: {
@@ -49,7 +48,7 @@
                         this.settings = response.data.data;
 
                         this.intervalInHours = 0;
-                        this.delayInHours = Math.min(23, this.settings.delay);
+                        this.delayInHours = this.settings.delay;
 
                         this.loadingSettings = false;
                     });
