@@ -25,6 +25,8 @@
         },
 
 
+
+
         methods: {
             /**
              * Load settings.
@@ -45,6 +47,8 @@
              */
             saveSettings() {
                 this.loadingSettings = true;
+
+                this.delayInHours = this.settings.interval = Math.min(59, this.settings.interval);
 
                 this.$http.post('/api/booking/settings', this.settings)
                     .then(response => {

@@ -27,13 +27,14 @@
         },
 
         watch: {
-          intervalInHours(val) {
-              this.settings.interval = val * 60;
-          },
+//          intervalInHours(val) {
+//              this.settings.interval = val * 60;
+//          },
 
-          delayInHours(val) {
-              this.settings.interval = val * 60;
-          }
+//          delayInHours(val) {
+//              val = min(23, val);
+//              this.settings.interval = val;
+//          }
         },
 
         methods: {
@@ -47,8 +48,8 @@
                     .then(response => {
                         this.settings = response.data.data;
 
-                        this.intervalInHours = this.settings.interval / 60;
-                        this.delayInHours = this.settings.delay / 60;
+                        this.intervalInHours = 0;
+                        this.delayInHours = Math.min(23, this.settings.delay);
 
                         this.loadingSettings = false;
                     });
@@ -59,6 +60,7 @@
              */
             saveSettings() {
                 this.loadingSettings = true;
+                this.settings.delay = Math.min(23, this.settings.delay);
 
                 this.$http.post('/api/booking/settings', this.settings)
                     .then(response => {
@@ -88,14 +90,14 @@
                         <label for="disabled">Disabled</label>
                     </div>
 
-                    <div class="form-group">
-                        <label for="interval">Interval (in hours):</label>
-                        <input v-model="intervalInHours" type="number" name="interval" id="interval"
-                               class="form-control">
-                    </div>
+                    <!--<div class="form-group">-->
+                        <!--<label for="interval">Interval (in hours):</label>-->
+                        <!--<input v-model="intervalInHours" type="number" name="interval" id="interval"-->
+                               <!--class="form-control">-->
+                    <!--</div>-->
 
                     <div class="form-group">
-                        <label for="interval">Delay (in hours):</label>
+                        <label for="delay">Delay (in hours):</label>
                         <input v-model="delayInHours" type="number" name="delay" id="delay"
                                class="form-control">
                     </div>
