@@ -33,6 +33,13 @@
                         <tab>
                             <router-link to="/settings/send" active-class="tab-link-active" class="tab-link">Sending data</router-link>
                         </tab>
+                        <tab>
+                            <router-link to="/settings/error" active-class="tab-link-active" class="tab-link">Errors display</router-link>
+                        </tab>
+                        <tab>
+                            <router-link to="/settings/warning" active-class="tab-link-active" class="tab-link">Warnings display</router-link>
+                        </tab>
+
                     </tabs>
 
                     <router-view/>
