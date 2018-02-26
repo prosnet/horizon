@@ -92,6 +92,15 @@ export default new Router({
                     path: 'send',
                     component: require('../pages/Settings/Send.vue')
                 },
+                {
+                    path: 'error',
+                    component: require('../pages/Settings/Error.vue')
+                },
+                {
+                    path: 'warning',
+                    component: require('../pages/Settings/Warning.vue')
+                },
+                
             ],
         },
     ],
